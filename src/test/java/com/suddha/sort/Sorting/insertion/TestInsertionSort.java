@@ -17,13 +17,13 @@ public class TestInsertionSort {
     private InsertionSort insertionSort;
 
     @BeforeEach
-    void setup(){
+    void setup() {
         insertionSort = new InsertionSort();
 
     }
 
     @Test
-    void given_range_of_int(){
+    void given_range_of_int() {
 
         int n = 5;
         Integer[] arr = IntStream.range(0, n)
@@ -38,7 +38,7 @@ public class TestInsertionSort {
                 .boxed()
                 .toArray(Integer[]::new);
 
-        assertEquals(Arrays.toString(arr),Arrays.toString(expected));
+        assertEquals(Arrays.toString(arr), Arrays.toString(expected));
 
     }
 
