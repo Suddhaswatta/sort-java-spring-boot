@@ -18,7 +18,7 @@ public class SortController {
 
 
     @GetMapping("/insertion-sort/{n}")
-    public Flux<String> triggerInsertionSort(@PathVariable int n){
+    public Flux<String> insertionSort(@PathVariable int n){
 
         Integer[] arr = IntStream.range(0, n)
                 .boxed()
