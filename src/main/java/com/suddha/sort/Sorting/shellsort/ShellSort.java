@@ -33,7 +33,7 @@ public class ShellSort extends Sort {
         }
 
 
-        return null;
+        return logs;
     }
 
     @Override
@@ -45,6 +45,8 @@ public class ShellSort extends Sort {
 
         while (h>0){
             for(int i = h; i< arr.length; i++) {
+                if(isSorted(arr,i))
+                    break;
                 logs.add(Arrays.toString(arr));
                for (int j = i; j >=h && less(arr[j], arr[j - h]); j-=h){
                     swap(arr, j, j - h);

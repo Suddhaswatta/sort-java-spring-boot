@@ -20,7 +20,7 @@ public class SortController {
     @GetMapping(value = "/insertion-sort/{n}",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> insertionSort(@PathVariable int n){
 
-        Integer[] arr = Utils.generateIntegerArray(n,true);
+        Integer[] arr = Utils.randomArray(n);
         return Flux.fromIterable(
                         factory.getSortingAlgorithm("INSERTION_SORT").sort(arr)
                 ).delayElements(Duration.ofSeconds(1));
@@ -29,7 +29,7 @@ public class SortController {
     @GetMapping(value = "/shell-sort/{n}",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> shellSort(@PathVariable int n){
 
-        Integer[] arr = Utils.generateIntegerArray(n, true);
+        Integer[] arr = Utils.generateIntegerArray(n,false);
 
         return Flux.fromIterable(
                 factory.getSortingAlgorithm("SHELL_SORT").sort(arr)
